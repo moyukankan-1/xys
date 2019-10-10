@@ -1,0 +1,547 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+li,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none!important;
+}
+@font-face {
+  font-family: fonts;
+  src: url("TrajanPro-Regular.otf");
+}
+body,
+html {
+  height: auto;
+  overflow: hidden;
+}
+.page-all {
+  position: relative;
+  width: 100%;
+}
+.shade {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  background: #000;
+}
+.shade .circlebox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+.shade .circlebox span {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  animation: move 1.5s infinite linear;
+}
+.shade .circlebox span:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+.shade .circlebox span:nth-child(2) {
+  right: 0;
+  top: 0;
+}
+.shade .circlebox span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+}
+.shade .circlebox span:nth-child(4) {
+  left: 0;
+  bottom: 0;
+}
+.shade .circlebox:nth-child(1) span:nth-child(1) {
+  animation-delay: -0.1s;
+}
+.shade .circlebox:nth-child(2) span:nth-child(1) {
+  animation-delay: -0.3s;
+}
+.shade .circlebox:nth-child(1) span:nth-child(2) {
+  animation-delay: -0.5s;
+}
+.shade .circlebox:nth-child(2) span:nth-child(2) {
+  animation-delay: -0.7s;
+}
+.shade .circlebox:nth-child(1) span:nth-child(3) {
+  animation-delay: -0.9s;
+}
+.shade .circlebox:nth-child(2) span:nth-child(3) {
+  animation-delay: -1.1s;
+}
+.shade .circlebox:nth-child(1) span:nth-child(4) {
+  animation-delay: -1.3s;
+}
+.shade .circlebox:nth-child(2) span:nth-child(4) {
+  animation-delay: -1.5s;
+}
+.open {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  display: none;
+  z-index: 100;
+}
+.open i {
+  color: #000;
+  font-size: 30px;
+}
+.close {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: none;
+  padding: 20px;
+}
+.close i {
+  color: #000;
+  font-size: 30px;
+}
+.broadside {
+  position: fixed;
+  width: 20%;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow-y: scroll;
+  transition: .5s transform;
+  background: rgba(0, 0, 0, 0.1);
+}
+.broadside h1 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.broadside h1 a {
+  color: #000;
+}
+.broadside nav > ul {
+  margin-bottom: 160px;
+  text-align: center;
+}
+.broadside nav > ul li {
+  margin-bottom: 20px;
+}
+.broadside nav > ul li a {
+  font-family: fonts;
+  position: relative;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 5px;
+}
+.broadside nav > ul li a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: deepskyblue;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transition: 0.5s all;
+}
+.broadside nav > ul li a:hover:after {
+  left: 0;
+  width: 100%;
+}
+.broadside nav > ul li .active:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: deepskyblue;
+  position: absolute;
+  left: 0;
+}
+.broadside .circure {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+}
+.broadside .circure a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  border-radius: 50%;
+  background: #2e3e50;
+  color: #fff;
+  transition: 0.5s background-color;
+}
+.broadside .circure a i {
+  display: block;
+  margin-top: 8px;
+  transition: 0.5s transform;
+}
+.broadside .circure a:hover {
+  background: #e67e22;
+}
+.broadside .circure a:hover > i {
+  transform: scale(1.5) rotate(25deg);
+}
+.main {
+  position: relative;
+  width: 80%;
+  float: right;
+  transition: .5s transform;
+  background: rgba(0, 0, 0, 0.1);
+}
+.main .parents {
+  position: relative;
+}
+.main .parents .main-img {
+  position: relative;
+}
+.main .parents .main-img li {
+  position: absolute;
+  width: 100%;
+}
+.main .parents .main-img li:nth-child(1) {
+  background: url("../img/img_bg_1.jpg") no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.main .parents .main-img li:nth-child(2) {
+  background: url("../img/img_bg_2.jpg") no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  opacity: 0;
+}
+.main .parents .main-img li:nth-child(3) {
+  background: url("../img/img_bg_3.jpg") no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  opacity: 0;
+}
+.main .parents .main-img li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.main .parents .main-origin {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main .parents .main-origin li {
+  float: left;
+}
+.main .parents .main-origin li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00BFFF;
+  margin-right: 10px;
+}
+.main .parents .main-origin li a.pos {
+  background: #255625;
+}
+.main .parents .main-paging {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.main .parents .main-paging .prev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .parents .main-paging .next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .parents .main-font {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-top: 100px;
+  transform: translateX(-50%);
+}
+.main .parents .main-font:nth-child(2) {
+  visibility: hidden;
+  opacity: 0;
+}
+.main .parents .main-font:nth-child(3) {
+  visibility: hidden;
+  opacity: 0;
+}
+.main .parents .main-font p {
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.main .parents .main-font .font-input {
+  text-align: center;
+  cursor: pointer;
+}
+.main .parents .main-font .font-input span {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+}
+.main .parents .main-font .font-input span:nth-child(1) {
+  background: #fff;
+}
+.main .parents .main-font .font-input span:nth-child(1) a {
+  display: block;
+  height: 30px;
+  transition: 0.5s height;
+}
+.main .parents .main-font .font-input span:nth-child(1) a:nth-child(1) {
+  background: #228896;
+}
+.main .parents .main-font .font-input span:nth-child(1) a:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #228896;
+}
+.main .parents .main-font .font-input span:nth-child(2) {
+  background: #228896;
+}
+.main .parents .main-font .font-input span:nth-child(2) a {
+  display: block;
+  height: 30px;
+  transition: 0.5s height;
+  background: #255625;
+}
+.main .parents .main-font .font-input span:nth-child(2) a:nth-child(1) {
+  background: #fff;
+}
+.main .parents .main-font .font-input span:nth-child(2) a:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+.main .parents .main-font .font-input span:hover a {
+  height: 0;
+}
+.main .main-content {
+  width: 100%;
+  padding: 30px;
+}
+.main .main-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+.main .main-content .content-hobby {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.main .main-content .content-hobby li {
+  margin-bottom: 40px;
+  opacity: 0;
+}
+.main .main-content .content-hobby li .hobby-logo {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+}
+.main .main-content .content-hobby li .hobby-logo i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #228896;
+}
+.main .main-content .content-hobby li .hobby-text {
+  padding-left: 120px;
+}
+.main .main-content .content-hobby li .hobby-text h3 {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.main .main-content .content-hobby li .hobby-text p {
+  color: rgba(0, 0, 0, 0.5);
+}
+.main .main-travel {
+  width: 100%;
+  padding: 30px;
+}
+.main .main-travel h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+.main .main-travel .travel-address {
+  width: 100%;
+}
+.main .main-travel .travel-address li {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  opacity: 0;
+}
+.main .main-travel .travel-address li div {
+  width: 100%;
+  background: #fff;
+}
+.main .main-travel .travel-address li div .imgs {
+  position: relative;
+  overflow: hidden;
+}
+.main .main-travel .travel-address li div .imgs img {
+  width: 100%;
+  transition: 1s transform;
+}
+.main .main-travel .travel-address li div .imgs i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #eee;
+  opacity: 0;
+  transition: 1s opacity;
+  cursor: pointer;
+}
+.main .main-travel .travel-address li div .imgs:hover i {
+  opacity: 1;
+}
+.main .main-travel .travel-address li div .imgs:hover img {
+  transform: scale(1.3);
+}
+.main .main-travel .travel-address li div h3 {
+  font-size: 16px;
+  margin: 10px 20px;
+  color: #000;
+}
+.main .main-travel .travel-address li div span {
+  display: block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.main .main-travel .travel-address li div p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.main .main-travel .travel-address li div a {
+  display: block;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #000;
+  padding-bottom: 20px;
+}
+.main .main-travel .travel-address li div a i {
+  margin-left: 10px;
+  transition: 0.5s margin-left;
+}
+.main .main-travel .travel-address li div a:hover i {
+  margin-left: 25px;
+}
+.main .main-travel .travel-address li div div i {
+  position: absolute;
+}
+.main .main-end {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.main .main-end h2 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+.main .main-end p {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 50px;
+}
+.main .main-end a {
+  background: #228896;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .page-all .broadside {
+    width: 30%;
+  }
+  .page-all .main {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-all .broadside {
+    width: 270px;
+    transform: translateX(-270px);
+  }
+  .page-all .main {
+    width: 100%;
+  }
+  .main .parents .main-font {
+    width: 80%;
+  }
+  .main .parents .main-font p {
+    font-size: 28px;
+  }
+  .main .parents .main-font .font-input span {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .page-all .open {
+    display: block;
+  }
+  .page-all .close {
+    display: none;
+  }
+}
